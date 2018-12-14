@@ -35,7 +35,6 @@ function display() {
             table.push([element.item_id, element.product_name, element.department_name, "$" + element.price, element.stock_quantity]);
         })
         console.log(table.toString());
-        console.log(productList);
         main();
     })
 }
