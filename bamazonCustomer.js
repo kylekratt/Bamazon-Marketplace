@@ -59,15 +59,16 @@ function main() {
         .then(function (answers) {
             if (!(answers.num > 0)) {
                 console.log("Please enter a valid number.");
-                main;
+                main();
             }
             else if (answers.num > table[answers.id - 1][4]) {
                 console.log("Insufficient quantity!");
-                main;
+                main();
             }
             else {
-                console.log("Total cost: $" + answers.num * parseFloat(table[answers.id - 1][3].slice(1)));
-                connection.query("UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?", [answers.num, answers.id], function (error, results, fields) {
+                var cost = answers.num * parseFloat(table[answers.id - 1][3].slice(1));
+                console.log("Total cost: $" + cost);
+                connection.query("UPDATE products SET stock_quantity = stock_quantity - ?, product_sales = product_sales + ? WHERE item_id = ?", [answers.num, cost, answers.id], function (error, results, fields) {
                     if (error) throw error;
                 })
                 connection.end();
