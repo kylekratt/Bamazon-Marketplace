@@ -35,6 +35,7 @@ connection.query('SELECT department_name FROM products GROUP BY department_name'
                 value: (element.item_id)
             });
         })
+        main();
     })
 })
 function display() {
