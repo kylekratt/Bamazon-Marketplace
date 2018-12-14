@@ -22,6 +22,6 @@ The total cost of their purchase is then displayed to the customer.
 ![afterNumber Example](assets/screenshots/afterNumber.PNG)
 
 The database is updated when the customer makes a purchase, as can be seen when running the function again. 
-(I ordered more Snickers between my first run and this table, which is why the discrepancy is 20 and not 10)
+(Note the total number of Snickers is now 990 and not 1000)
 
 ![newTable Example](assets/screenshots/newTable.PNG)
