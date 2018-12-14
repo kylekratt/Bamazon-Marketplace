@@ -66,7 +66,6 @@ function main() {
                 main;
             }
             else {
-                console.log(parseFloat(table[answers.id - 1][3].slice(1)));
                 console.log("Total cost: $" + answers.num * parseFloat(table[answers.id - 1][3].slice(1)));
                 connection.query("UPDATE products SET stock_quantity = stock_quantity - ? WHERE item_id = ?", [answers.num, answers.id], function (error, results, fields) {
                     if (error) throw error;
